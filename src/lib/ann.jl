@@ -27,7 +27,7 @@ end
 
 function forward_propagate(input::Layer, output::Layer)
     output.Z = output.W * input.A + output.b
-    output.activations = activate(output.logits)
+    output.A = output.g(output.Z)
 end
 
 mutable struct ANN
